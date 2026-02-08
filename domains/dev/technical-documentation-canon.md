@@ -50,6 +50,8 @@ Se o documento for extenso, a estrutura pode ser expandida, mas nunca reduzida.
 
 Cada seção principal deve conter no mínimo três parágrafos completos.
 
+Cada subseção deve conter no mínimo 2 parágrafos completos.
+
 Parágrafos devem ser explicativos e narrativos, não meramente introdutórios.
 
 Não é permitido substituir parágrafos por listas extensas.

@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
-    "markdownlint-cli": "^0.36.0"
+    "markdownlint-cli": "^0.36.0",
+    "stylelint": "^15.0.0",
+    "stylelint-config-recommended": "^9.0.0",
+    "eslint": "^8.0.0"
   },
   "scripts": {
-    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.json"
+    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.json",
+    "lint:css": "stylelint \"**/*.{css,scss}\"",
+    "lint:js": "eslint \"**/*.{js,jsx,mjs}\" --max-warnings=0"
   }
 }
