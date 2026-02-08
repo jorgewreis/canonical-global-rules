@@ -1,0 +1,11 @@
+﻿{
+  "name": "canonical-global-rules",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "markdownlint-cli": "^0.36.0"
+  },
+  "scripts": {
+    "lint:md": "markdownlint \"**/*.md\" -c .markdownlint.json"
+  }
+}
