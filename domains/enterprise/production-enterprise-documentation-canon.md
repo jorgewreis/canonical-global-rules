@@ -105,6 +105,7 @@ Cada artefato listado abaixo deve ser produzido como um documento separado, com 
 - `global/00-global-canon.md` — regras globais de documentação.
 - `formats/` — padrões de formato e estilo (Markdown, HTML, CSS, etc.).
 - `docs/templates/` — modelos recomendados para documentos específicos.
+ - `global/doc-generation-procedure-canon.md` — procedimento canônico de geração interativa de documentos e código (Q&A uma-pergunta-por-vez, sugestões didáticas e etapas de geração).
 
 ## Artefatos canônicos relacionados (pasta `domains/enterprise`)
 

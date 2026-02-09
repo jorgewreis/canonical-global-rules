@@ -1,5 +1,15 @@
 ﻿{
   "default": true,
+  "MD013": { "line_length": 120, "code_blocks": false },
+  "MD004": { "style": "dash" },
+  "MD007": { "indent": 2 },
+  "MD022": true,
+  "MD028": false,
+  "MD033": false,
+  "MD041": true
+}
+{
+  "default": true,
   "MD004": { "style": "-" },
   "MD013": false,
   "MD022": true,
