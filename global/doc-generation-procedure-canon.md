@@ -1,7 +1,7 @@
 ---
 title: Procedimento Canônico de Geração Interativa de Documentos e Código
 status: draft
-version: 1.0.0
+version: 1.1.0
 owner: governance@empresa
 created: 2026-02-09
 review_cycle: 12m
@@ -9,75 +9,52 @@ review_cycle: 12m
 
 # Procedimento Canônico de Geração Interativa de Documentos e Código
 
-Objetivo
+## 1. Objetivo
 
-Definir um procedimento padrão e interativo que o assistente (chat) deve seguir sempre que auxiliar na criação de documentos textuais baseados em templates canônicos Markdown ou na geração de código. O fluxo garante maior alinhamento com o objetivo do autor, reduz retrabalho e registra decisões importantes.
+Definir um fluxo interativo e padronizado que o assistente automatizado deve seguir ao gerar documentos canônicos e artefatos de código. O procedimento tem como objetivo reduzir retrabalho, garantir consistência editorial e técnica, e registrar decisões críticas para auditoria e rastreabilidade. Aplicam-se validações incrementais que exigem confirmação explícita do autor antes de cada entrega parcial.
 
-Escopo
+## 2. Escopo
 
-Aplica-se a: todos os fluxos de criação de documentos Markdown canônicos e geração de código gerados por assistentes automatizados dentro desta organização.
+Este procedimento aplica-se a todos os fluxos de criação de documentos Markdown canônicos e à geração de código quando realizados por assistentes automatizados integrados às práticas da organização. Não cobre conteúdo produzido manualmente sem uso do assistente, exceto quando for necessário integrar esses artefatos a templates canônicos ou quando houver automação declarada.
 
-Princípios gerais
+## 3. Princípios
 
-- Interatividade controlada: o assistente pergunta UMA questão por vez e espera a resposta do usuário antes de prosseguir.
-- Sugestões didáticas: para cada pergunta o assistente apresenta pelo menos 3 sugestões de resposta (cada uma com explicação curta e, quando aplicável, um exemplo concreto).
-- Aceitação de resposta livre: o usuário pode responder livremente (texto aberto) em vez de escolher uma sugestão.
-- Confirmação periódica: ao final de cada bloco lógico (ex.: seções principais do documento; ou uma parte do código) o assistente apresenta um resumo e pede confirmação antes de gerar o próximo bloco.
-- Registro de decisões: todas as escolhas críticas (ex.: formato, público, restrições técnicas) devem ser gravadas no frontmatter YAML ou em uma seção `Decisions` do documento.
+Interatividade controlada: o assistente deve formular UMA pergunta por vez e aguardar a resposta do usuário antes de prosseguir. Isso evita ambiguidades, permite decisões informadas e reduz retrabalho causado por múltiplas escolhas feitas sem confirmação.
 
-Fluxo recomendado — Documentos (Markdown)
+Sugestões didáticas: para cada pergunta o assistente apresenta pelo menos três opções com explicação e exemplo prático. A prática facilita a tomada de decisão pelo autor e torna explícitos trade-offs entre alternativas.
 
-1) Início: o assistente inicia com a pergunta fundamental:
-   "Qual o objetivo principal deste documento?"
-   - Fornecer ≥3 sugestões de resposta, com explicação e exemplo, por exemplo:
-     a) Resumo executivo para diretoria — Explicação: 1 página, linguagem de alto nível; Ex.: "Resumo para CEO".
-     b) Procedimento operacional (SOP) — Explicação: passo-a-passo, checklists; Ex.: "Checklist de deploy".
-     c) Material de treinamento — Explicação: linguagem didática, exemplos e exercícios; Ex.: "Manual do colaborador".
+Aceitação de resposta livre: o usuário pode fornecer respostas em texto livre, que devem ser aceitas e registradas. O assistente deve validar respostas quando relevante (ex.: formatos, valores permitidos) e oferecer correções sugeridas.
 
-2) Perguntas subsequentes (cada uma feita uma a uma, com ≥3 sugestões):
-   - Público-alvo (quem lerá e tom da linguagem).
-   - Extensão desejada (curto 1-2p / médio 3-10p / longo >10p).
-   - Nível de detalhe técnico (alto / médio / baixo) e anexos esperados.
-   - Formato e template preferido (usar `docs/templates/` ou custom).
-   - Restrições (informações sensíveis, linguagem, conformidade).
+Confirmação periódica: ao final de cada bloco lógico (por exemplo, uma seção principal do documento ou um conjunto de endpoints) o assistente apresenta um resumo das decisões tomadas e solicita confirmação escrita antes de gerar o próximo bloco. A confirmação é obrigatória para avanços que alterem arquitetura ou escopo.
 
-3) Geração incremental:
-   - Depois de coletar respostas para as perguntas principais, o assistente gera o rascunho da primeira seção (Resumo Executivo ou Introdução) e pede revisão.
-   - Após aprovação da seção, pergunta se deve continuar com a próxima seção (ex.: Propósito, Escopo, Responsabilidades).
-   - Repetir até completar todas as seções mínimas do template.
+Registro de decisões: todas as escolhas críticas (formato, público, restrições técnicas, stack) devem ser registradas no frontmatter YAML ou em uma seção `Decisions` do documento, com data e autor. Esse registro é requisito para versões oficiais e para rastreabilidade de auditoria.
 
-4) Finalização:
-   - Gerar frontmatter final (preenchendo `title`, `owner`, `status`, `version`, `created`, `review_cycle` e `decisions` onde pertinente).
-   - Inserir seção `Histórico de versões` e `Decisions` com data, autor e resumo das escolhas.
-   - Perguntar se deseja gerar variantes (resumo curto, versão para treinamento, versão para auditoria).
 
-Fluxo recomendado — Geração de Código
+## 4. Fluxos
 
-Objetivo: reduzir retrabalho dividindo a entrega em partes e validando arquitetura e decisões antes de implementar.
+### 4.1 Documentos (Markdown)
 
-1) Fase 1 — Design/Especificação (pergunta inicial):
-   - "Qual o objetivo do componente/sistema que deseja gerar?"
-   - Sugestões (com exemplos):
-     a) Biblioteca reutilizável (explicação: API pública, testes, documentação) — Ex.: utilitários de data.
-     b) Serviço web (explicação: endpoints, autenticação, persistência) — Ex.: API REST para usuários.
-     c) Script pontual (explicação: execução única ou agendada) — Ex.: migração de dados.
+1) Início: o assistente inicia com a pergunta fundamental: "Qual o objetivo principal deste documento?". Para cada pergunta, o assistente apresenta ao menos três sugestões com explicação e exemplo prático, e aceita respostas em texto livre quando necessário.
 
-   - Perguntas seguintes (uma a uma): linguagem/stack, requisitos não-funcionais (performance, segurança), dependências, restrições de licença.
+2) Perguntas subsequentes: o assistente coleta, uma a uma, informações como público-alvo, extensão desejada, nível de detalhe técnico, template preferido e restrições (informações sensíveis e conformidade). Cada pergunta deve incluir opções explicadas e implicações para o conteúdo gerado.
 
-   - Entregar: arquivo de especificação/README com endpoints, modelos de dados e contratos de interface. Pedir confirmação.
+3) Geração incremental: após coletar as entradas principais, o assistente gera o rascunho da primeira seção (por exemplo, Resumo Executivo ou Introdução) e solicita revisão. Somente após aprovação explícita do autor, o assistente avança para a próxima seção.
 
-2) Fase 2 — Esqueleto/Scaffolding
-   - Gerar estrutura de pastas, arquivos principais, CI básico e placeholders.
-   - Apresentar a lista de arquivos que serão criados e perguntar aprovação antes de escrever o código.
+4) Finalização: o assistente gera o frontmatter final (preenchendo `title`, `owner`, `status`, `version`, `created`, `review_cycle` e `decisions` quando aplicável), adiciona `Histórico de versões` e `Decisions` com data/autor e pergunta se o usuário deseja variantes do documento (resumo curto, versão para treinamento, versão para auditoria).
 
-3) Fase 3 — Implementação por partes
-   - Implementar uma unidade funcional por vez (ex.: endpoint A, depois endpoint B) — antes de cada unidade: perguntar se deve implementar e oferecer opções de implementação (3 abordagens com trade-offs).
+### 4.2 Geração de Código
 
-4) Fase 4 — Testes
-   - Gerar testes unitários e de integração; pedir ao usuário priorizar cobertura/áreas críticas.
+Objetivo: reduzir retrabalho dividindo a entrega em fases e validando arquitetura e decisões antes da implementação.
 
-5) Fase 5 — Documentação e Deployment
-   - Gerar README final, instruções de deploy e comandos.
+1) Fase 1 — Design/Especificação: o assistente pergunta o objetivo do componente/sistema e apresenta abordagens (por exemplo: biblioteca reutilizável, serviço web, script pontual), com exemplos e trade-offs. Em seguida coleta linguagem/stack, requisitos não-funcionais, dependências e restrições de licença e gera um SPEC/README para confirmação.
+
+2) Fase 2 — Esqueleto/Scaffolding: o assistente propõe a estrutura de pastas, arquivos principais, CI básico e placeholders; apresenta a lista de arquivos que serão criados e solicita aprovação antes de escrever código.
+
+3) Fase 3 — Implementação por partes: implementar unidades funcionais isoladas (por ex., endpoint A), sempre solicitando confirmação e oferecendo 3 abordagens com trade-offs quando relevante.
+
+4) Fase 4 — Testes: gerar testes unitários e de integração e priorizar áreas de cobertura conforme orientação do usuário.
+
+5) Fase 5 — Documentação e Deployment: gerar README final, instruções de deploy e comandos de execução.
 
 Templates de perguntas padrão (exemplos)
 
@@ -88,7 +65,7 @@ Templates de perguntas padrão (exemplos)
 - Restrições técnicas/regulatórias
 - Critério de aceitação: (o que significa "pronto")
 
-Exemplo de diálogo (documento)
+Exemplos de diálogo (documento)
 
 Assistente: "Qual o objetivo principal deste documento?" — Sugestões: a) Resumo executivo..., b) SOP..., c) Material de treinamento... (cada com explicação e exemplo).
 Usuário: "b) SOP"
@@ -145,5 +122,79 @@ Anexos — Modelos prontos (exemplos)
   5. Nível de detalhe
   6. Riscos/controles
 
+### Considerações Finais ou Observações Técnicas
+
+Limitações, premissas, decisões relevantes ou pontos de atenção.
+
+Se o documento for extenso, a estrutura pode ser expandida, mas nunca reduzida.
+
+
+## 5. Regras de Profundidade e Escrita
+
+### 5.1 Parágrafos
+
+Cada seção principal deve conter no mínimo três parágrafos completos.
+
+Cada subseção deve conter no mínimo dois parágrafos completos.
+
+Parágrafos devem ser explicativos e narrativos, não meramente introdutórios.
+
+Não é permitido substituir parágrafos por listas extensas.
+
+### 5.2 Tópicos e Listas
+
+Listas devem ser usadas somente para:
+
+- exemplos
+- checklists
+- enumeração objetiva de itens
+
+Listas nunca devem ser o conteúdo principal da seção.
+
+Sempre que houver lista, deve haver texto explicativo antes e depois.
+
+## 6. Linguagem e Tom Técnico
+
+A linguagem deve ser técnico-descritiva, clara e precisa. Use voz ativa e instruções objetivas.
+
+Evitar termos genéricos sem explicação (por exemplo: “eficiente”, “moderno”, “robusto”). Quando usados, acompanhe justificativa técnica.
+
+Não utilizar linguagem promocional ou de marketing, emojis, humor ou informalidades.
+
+O texto deve ser compreensível por um profissional técnico que não participou do projeto, fornecendo contexto suficiente para entendimento e ação.
+
+## 7. Layout e Organização Visual
+
+Títulos e subtítulos devem seguir hierarquia lógica e facilitar navegação (por exemplo, H2 para seções principais, H3 para subseções).
+
+Evitar seções excessivamente longas sem subdivisão; prefira fragmentação em subseções claras quando necessário.
+
+Manter espaçamento visual consistente entre blocos conceituais para leitura rápida.
+
+Código, quando necessário, deve ser claramente delimitado e sempre acompanhado de explicação textual que descreva propósito e parâmetros.
+
+## 8. Regras de Conteúdo Técnico
+
+Ao documentar qualquer componente técnico, sempre que aplicável, deve-se abordar as seguintes dimensões:
+
+- Finalidade: por que isso existe.
+- Contexto: onde se encaixa no sistema.
+- Decisões técnicas: por que foi escolhido.
+- Impactos: vantagens, limitações e riscos.
+- Dependências: integrações ou pré-requisitos.
+
+Se alguma dessas dimensões não puder ser descrita, isso deve ser explicitado e justificado.
+
+## 9. Validação Obrigatória Antes da Entrega
+
+Antes de finalizar um documento técnico, verificar:
+
+- A estrutura mínima foi respeitada?
+- Cada seção principal tem ao menos três parágrafos?
+- As listas são complementares, não dominantes?
+- As decisões técnicas estão explicadas?
+- Não há suposições implícitas sem justificativa?
+
 Histórico
+- 2026-02-09 — v1.1.0 — Reescrita de Objetivo/Escopo/Princípios; renumeração e inclusão de regras de escrita e validação.
 - 2026-02-09 — v1.0.0 — Procedimento canônico criado.
