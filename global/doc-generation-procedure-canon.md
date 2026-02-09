@@ -1,3 +1,16 @@
+title: "Modelo Canon — Documento Profissional Empresarial"
+status: draft
+version: 1.0.0
+owner: docs@empresa
+created: 2026-02-09
+review_cycle: 12m
+
+# Modelo Canon — Documento Profissional Empresarial
+
+Este modelo descreve a estrutura, regras de redação e formatação para documentos profissionais corporativos destinados a produção em Word (.docx) e exportação para PDF. O conteúdo segue orientações ABNT relevantes e prioriza linguagem narrativa, detalhista e lógica, com parágrafos concisos e interligados.
+
+## Capa
+
 ---
 title: Procedimento Canônico de Geração Interativa de Documentos e Código
 status: draft
@@ -102,25 +115,25 @@ Anexos — Modelos prontos (exemplos)
 
 - Exemplo de frontmatter mínimo gerado automaticamente:
 
-  ---
-  title: "Título do documento"
-  owner: "time@empresa"
-  status: draft
-  version: 0.1.0
-  created: 2026-02-09
-  review_cycle: 12m
-  decisions:
-    document_type: "SOP"
-    target_audience: "operadores"
-  ---
+	---
+	title: "Título do documento"
+	owner: "time@empresa"
+	status: draft
+	version: 0.1.0
+	created: 2026-02-09
+	review_cycle: 12m
+	decisions:
+		document_type: "SOP"
+		target_audience: "operadores"
+	---
 
 - Exemplo de checklist de perguntas para documentos:
-  1. Objetivo principal
-  2. Público-alvo
-  3. Escopo (incluir/excluir)
-  4. Formato e templates
-  5. Nível de detalhe
-  6. Riscos/controles
+	1. Objetivo principal
+	2. Público-alvo
+	3. Escopo (incluir/excluir)
+	4. Formato e templates
+	5. Nível de detalhe
+	6. Riscos/controles
 
 ### Considerações Finais ou Observações Técnicas
 
@@ -198,3 +211,4 @@ Antes de finalizar um documento técnico, verificar:
 Histórico
 - 2026-02-09 — v1.1.0 — Reescrita de Objetivo/Escopo/Princípios; renumeração e inclusão de regras de escrita e validação.
 - 2026-02-09 — v1.0.0 — Procedimento canônico criado.
+
