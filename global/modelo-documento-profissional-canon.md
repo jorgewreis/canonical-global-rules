@@ -7,7 +7,7 @@ created: 2026-02-09
 review_cycle: 12m
 ---
 
-# Modelo Canon — Documento Profissional Empresarial
+# Modelo — Documento Profissional Empresarial
 
 Este modelo descreve a estrutura, regras de redação e formatação para documentos profissionais corporativos destinados a produção em Word (.docx) e exportação para PDF. O conteúdo segue orientações ABNT relevantes e prioriza linguagem narrativa, detalhista e lógica, com parágrafos concisos e interligados.
 
@@ -40,50 +40,31 @@ Parágrafo único, linguagem narrativa. Apresenta objetivo, escopo, principais c
 ## 1 Introdução
 Contextualiza a necessidade do documento e a situação atual. Apresenta, de forma concisa, o que será abordado e a utilidade do documento para as partes interessadas.
 
-## 2 Objetivos
-- Objetivo geral: frase direta.
-- Objetivos específicos: lista numerada com metas mensuráveis.
+## 2 Referências normativas
+Utilizar normas ABNT aplicáveis e referências institucionais (ex.: NBR 14724, NBR 6023, NBR 6024, NBR 10520, NBR 6027).
 
-## 3 Escopo
-Delimitação clara: unidades, períodos, processos, exceções e o que não está coberto.
-
-## 4 Referências normativas
-Citar normas ABNT aplicáveis e referências institucionais (ex.: NBR 14724, NBR 6023, NBR 6024, NBR 10520, NBR 6027). Incluir links ou códigos de documento quando pertinente.
-
-## 5 Definições e siglas
-Lista em ordem alfabética de siglas e termos usados com explicação objetiva.
-
-## 6 Metodologia
-Descrever, em sequência lógica, os métodos aplicados (coleta de dados, entrevistas, amostragens, análises). Cada subitem descreve procedimentos e critérios adotados.
-
-## 7 Levantamento e Análise
+## 3 Levantamento e Análise
 Organizar por processos, unidades ou temas. Cada subseção deve conter:
-- Descrição factual do que foi observado.
-- Análise interpretativa do impacto.
-- Evidências (documentos, dados, entrevistas).
+- Descrição de cada topico.
+- Análise interpretativa.
 
-Exemplo de subtítulo: 7.1 Processo de Recebimento — descrição concisa, análise e conclusão resumida.
-
-## 8 Conclusões
+## 4 Conclusões
 Parágrafos que sintetizem as constatações mais relevantes, referenciando as análises anteriores sem repetir extensivamente o conteúdo.
 
-## 9 Recomendações
+## 5 Recomendações
 Lista priorizada (alta/média/baixa) com estimativa de prazo e responsável sugerido. Para cada recomendação indicar objetivo, ação proposta, impacto esperado e critério de sucesso.
 
-## 10 Plano de Ação
-Tabela resumida com ações, responsáveis, marcos, recursos necessários, riscos e cronograma.
-
-## 11 Registros e Evidências
+## 6 Registros e Evidências
 Listagem de documentos consultados, locais de arquivamento e identificadores de evidências (planilhas, gravações, registros de sistema).
 
-## 12 Referências
+## 7 Referências
 Formatar conforme NBR 6023. Exemplos:
 SOBRENOME, Nome. Título: subtítulo. Edição. Local: Editora, ano.
 INSTITUIÇÃO. Título da norma. Número da norma, ano.
 
 Regras de citação (NBR 10520): citar diretamente com página e indicar paráfrase conforme norma.
 
-## 13 Anexos
+## 8 Anexos
 Documentos complementares numerados e referenciados no corpo do texto.
 
 ## Orientações de formatação — ABNT (práticas aplicáveis)
@@ -98,15 +79,15 @@ Documentos complementares numerados e referenciados no corpo do texto.
 - Tabelas/figuras: legenda acima (tabelas) ou abaixo (figuras); numerar sequencialmente e indicar fonte.
 
 ## Boas práticas de redação (estilo narrativo)
-- Parágrafos curtos (3–6 linhas), cada um com uma ideia central.
+- Parágrafos curtos (4 a 7 linhas), cada um com uma ideia central.
 - Conectivos entre parágrafos para manter fluxo lógico (por exemplo: "Além disso", "Consequentemente").
 - Evitar jargões sem definição; prefira termos descritivos (ex.: "processo de recebimento", "controle de qualidade").
 - Para dados, sempre sumarizar a interpretação imediata.
 - Preferir voz ativa e frases objetivas.
 
-## Regras de Profundidade e Escrita
+## 9 Regras de Profundidade e Escrita
 
-### 5.1 Parágrafos
+### 9.1 Parágrafos
 
 Cada seção principal deve conter no mínimo três parágrafos completos.
 
@@ -116,7 +97,7 @@ Parágrafos devem ser explicativos e narrativos, não meramente introdutórios.
 
 Não é permitido substituir parágrafos por listas extensas.
 
-### 5.2 Tópicos e Listas
+### 9.2 Tópicos e Listas
 
 Listas devem ser usadas somente para:
 

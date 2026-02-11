@@ -5,10 +5,6 @@ owner: docs@empresa
 created: 2026-02-09
 review_cycle: 12m
 
-# Modelo Canon — Documento Profissional Empresarial
-
-Este modelo descreve a estrutura, regras de redação e formatação para documentos profissionais corporativos destinados a produção em Word (.docx) e exportação para PDF. O conteúdo segue orientações ABNT relevantes e prioriza linguagem narrativa, detalhista e lógica, com parágrafos concisos e interligados.
-
 ## Capa
 
 ---
@@ -24,17 +20,17 @@ review_cycle: 12m
 
 ## 1. Objetivo
 
-Definir um fluxo interativo e padronizado que o assistente automatizado deve seguir ao gerar documentos canônicos e artefatos de código. O procedimento tem como objetivo reduzir retrabalho, garantir consistência editorial e técnica, e registrar decisões críticas para auditoria e rastreabilidade. Aplicam-se validações incrementais que exigem confirmação explícita do autor antes de cada entrega parcial.
+Definir um fluxo interativo e padronizado que o assistente automatizado deve seguir ao gerar documentos canônicos e trechos de código. O procedimento tem como objetivo reduzir retrabalho, garantir consistência editorial e técnica, e registrar decisões críticas para auditoria e rastreabilidade. Aplicam-se validações incrementais que exigem confirmação explícita do autor antes de cada entrega parcial.
 
 ## 2. Escopo
 
-Este procedimento aplica-se a todos os fluxos de criação de documentos Markdown canônicos e à geração de código quando realizados por assistentes automatizados integrados às práticas da organização. Não cobre conteúdo produzido manualmente sem uso do assistente, exceto quando for necessário integrar esses artefatos a templates canônicos ou quando houver automação declarada.
+Este procedimento aplica-se a todos os fluxos de criação de documentos Markdown canônicos e à geração de código quando realizados por assistentes automatizados integrados às práticas da organização. Não cobre conteúdo produzido manualmente sem uso do assistente, exceto quando for necessário integrar esses trechos a templates canônicos ou quando houver automação declarada.
 
 ## 3. Princípios
 
 Interatividade controlada: o assistente deve formular UMA pergunta por vez e aguardar a resposta do usuário antes de prosseguir. Isso evita ambiguidades, permite decisões informadas e reduz retrabalho causado por múltiplas escolhas feitas sem confirmação.
 
-Sugestões didáticas: para cada pergunta o assistente apresenta pelo menos três opções com explicação e exemplo prático. A prática facilita a tomada de decisão pelo autor e torna explícitos trade-offs entre alternativas.
+Sugestões didáticas: para cada pergunta o assistente apresenta pelo menos 4 opções com explicação e exemplo prático. A prática facilita a tomada de decisão pelo autor e torna explícitos trade-offs entre alternativas.
 
 Aceitação de resposta livre: o usuário pode fornecer respostas em texto livre, que devem ser aceitas e registradas. O assistente deve validar respostas quando relevante (ex.: formatos, valores permitidos) e oferecer correções sugeridas.
 
@@ -146,13 +142,11 @@ Se o documento for extenso, a estrutura pode ser expandida, mas nunca reduzida.
 
 ### 5.1 Parágrafos
 
-Cada seção principal deve conter no mínimo três parágrafos completos.
+Cada seção principal deve conter no mínimo 1 parágrafo completo.
 
-Cada subseção deve conter no mínimo dois parágrafos completos.
+Cada subseção deve conter no mínimo 3 frases.
 
 Parágrafos devem ser explicativos e narrativos, não meramente introdutórios.
-
-Não é permitido substituir parágrafos por listas extensas.
 
 ### 5.2 Tópicos e Listas
 
@@ -161,8 +155,6 @@ Listas devem ser usadas somente para:
 - exemplos
 - checklists
 - enumeração objetiva de itens
-
-Listas nunca devem ser o conteúdo principal da seção.
 
 Sempre que houver lista, deve haver texto explicativo antes e depois.
 
